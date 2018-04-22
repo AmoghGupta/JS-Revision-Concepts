@@ -1,0 +1,17 @@
+var quadratic = function(a, b, c, x) {
+    return a * x * x + b * x + c;
+};
+
+console.log(quadratic(1, 2, 3, 4));
+
+var curriedQuadratic = function(a) {
+    return function(b) {
+        return function(c) {
+            return function(x) {
+                return a * x * x + b * x + c;
+            };
+        };
+    };
+};
+
+console.log(curriedQuadratic(1)(2)(3)(4));

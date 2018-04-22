@@ -1,0 +1,13 @@
+var ob = {};
+ 
+Object.defineProperty( ob, 'a', {configurable: true, value: 1} );
+ 
+ob; // => {a:1}
+delete ob.a; // => true
+ob; // => {}
+ 
+Object.defineProperty( ob, 'a', {configurable: false, value: 1} );
+ 
+ob; // => {a:1}
+delete ob.a; // => false
+ob; // => {a:1}

@@ -1,0 +1,21 @@
+var ob = {a:1, b:2};
+ 
+ob.c = 3;
+Object.defineProperty(ob, 'd', {
+  value: 4,
+  enumerable: false
+});
+ 
+ob.d; // => 4
+ 
+for( var key in ob ) console.log( ob[key] ); 
+// Console will print out
+// 1
+// 2
+// 3
+ 
+Object.keys( ob );  // => ["a", "b", "c"]
+ 
+JSON.stringify( ob ); // => "{a:1,b:2,c:3}"
+ 
+ob.d; // => 4

@@ -1,0 +1,22 @@
+function add (a, b) {
+  return a + b;
+}
+
+add(3, 4); // returns 7
+
+This is a function that takes two arguments, a and b, and returns their sum. 
+We will now curry this function:
+
+
+
+
+function add (a) {
+  return function (b) {
+    return a + b;
+  }
+}
+
+
+add(3)(4);
+This is a function that takes one argument, a, and returns a 
+function that takes another argument, b, and that function returns their sum.

@@ -1,0 +1,33 @@
+// Writing your own memoize function
+// a simple pure function to get a value adding 10
+
+var add = (n) => (n + 10);
+console.log('Simple call', add(3));
+
+
+// a simple memoize function that takes in a function
+// and returns a memoized function
+var memoize = (fn) => {
+    var cache = {};
+    return (...args) => {
+        var n = args[0]; // just taking one argument here
+        if (n in cache) {
+            console.log('Fetching from cache');
+            return cache[n];
+        } else {
+            console.log('Calculating result');
+            var result = fn(n);
+            cache[n] = result;
+            return result;
+        }
+    }
+}
+// creating a memoized function for the 'add' pure function
+var memoizedAdd = memoize(add);
+console.log(memoizedAdd(3)); // calculated
+console.log(memoizedAdd(3)); // cached
+console.log(memoizedAdd(4)); // calculated
+console.log(memoizedAdd(4)); // cached
+
+
+//Now that’s great! This simple memoize function will wrap any simple function into a memoized equivalent.

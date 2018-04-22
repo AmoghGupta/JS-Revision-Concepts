@@ -1,0 +1,9 @@
+// min/max number in an array
+var numbers = [5, 6, 2, 3, 7];
+
+// using Math.min/Math.max apply
+var max = Math.max.apply(null, numbers); 
+// This about equal to Math.max(numbers[0], ...)
+// or Math.max(5, 6, ...)
+
+var min = Math.min.apply(null, numbers);

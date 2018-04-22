@@ -1,0 +1,9 @@
+var ob = {a: 1};
+ 
+Object.defineProperty( ob, 'B', {value: 2, writable:false} );
+ 
+ob.B; // => 2
+ 
+ob.B = 10;
+ 
+ob.B; // => 2
